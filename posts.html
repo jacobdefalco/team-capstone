@@ -4,8 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="scripts/auth.js"></script>
+    <script>
+      if (isLoggedIn() === false) window.location.replace("/");
+    </script>
   </head>
   <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="">Messages</a>
+        <a href="">Notifications</a>
+        <a href="">Search</a>
+        <a href="" onclick="logout()">Log Out</a>
+      </nav>
+    </header>
     <h1>POSTS</h1>
   </body>
 </html>
