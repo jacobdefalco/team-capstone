@@ -1,0 +1,8 @@
+POST https://microbloglite.herokuapp.com/api/users
+Content-Type: application/json
+Authorization: Bearer
+{
+  "username": "twitterfingers",
+  "fullName": "Twitter Fingers",
+  "password": "password"
+}
