@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
     />
+    <script src="scripts/auth.js"></script>
   </head>
   <body>
     <header>
@@ -17,11 +18,30 @@
         <a href="">Messages</a>
         <a href="">Notifications</a>
         <a href="">Search</a>
-        <a href="logout.html">Log Out</a>
+        <a href="">Log Out</a>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <form id="login">
+        <label for="username">Username</label>
+        <input type="text" id="username" />
+        <label for="password">Password</label>
+        <input type="text" id="password" />
+        <input type="checkbox" name="remember-me" id="remember-me-checkbox" />
+        <label for="remember-me-checkbox">Remember Me</label>
+        <button type="submit" id="loginButton" onclick="login()">Log In</button>
+        <hr />
+        <label for="register">Don't Have An Account?</label>
+        <button
+          type="button"
+          id="show-signup-form"
+          onclick="showRegisterForm()"
+        >
+          Sign Up
+        </button>
+      </form>
+    </main>
     <footer></footer>
-    <script></script>
+    <script src="scripts/login.js"></script>
   </body>
 </html>
