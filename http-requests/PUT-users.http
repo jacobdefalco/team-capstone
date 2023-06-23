@@ -1,0 +1,9 @@
+PUT https://microbloglite.herokuapp.com/api/users/twitterfingers
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InR3aXR0ZXJmaW5nZXJzIiwiaWF0IjoxNjg3NTMxNjY3LCJleHAiOjE2ODc2MTgwNjd9.4yCytQjbNEpLY1x2ZeoeQES_elnL9GzMrTrSlOxpKcU
+
+{
+    "username": "twitterfingers",
+    "bio": "soon to be trigger fingers",
+    "password": "password"
+}
