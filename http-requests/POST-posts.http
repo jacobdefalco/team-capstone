@@ -1,0 +1,7 @@
+POST https://microbloglite.herokuapp.com/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InR3aXR0ZXJmaW5nZXJzIiwiaWF0IjoxNjg3NTMxMTczLCJleHAiOjE2ODc2MTc1NzN9.HVEgyF51MRiUDnOaDu4QW8w4cmzSnYJH5MCL4rSq7KQ
+
+{
+    "text": "This one will be deleted"
+}

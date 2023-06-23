@@ -1,0 +1,2 @@
+GET https://microbloglite.herokuapp.com/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InR3aXR0ZXJmaW5nZXJzIiwiaWF0IjoxNjg3NTMyNTEwLCJleHAiOjE2ODc2MTg5MTB9.cXs1XCHGQ-6aKj6_0rU3U9uThbyL8xOb94oFZzSf04A
