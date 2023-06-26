@@ -1,0 +1,33 @@
+.navbar {
+  background-color: #3d5873;
+  /* fallback for old browsers */
+  background: #3d5873;
+  background: linear-gradient(to right, #1e3c5b, rgb(30, 126, 146));
+}
+
+.btn {
+  padding: 0.45rem 1.5rem 0.35rem;
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #c471f5;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(196, 113, 245, 1),
+    rgba(250, 113, 205, 1)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(196, 113, 245, 1),
+    rgb(243, 205, 230)
+  );
+}
+.nav-item {
+  margin-left: 20px;
+  margin-right: 20px;
+}
