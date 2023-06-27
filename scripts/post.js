@@ -96,17 +96,33 @@ function renderPost(postData) {
   });
 }
 
+async function addPost() {
+  // POST /api/posts
+  let post = document.getElementById("postInput").value;
+
+  if (post && !(post.trim() == "")) {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + getLoginData().token,
+      },
+      body: JSON.stringify({ text: post }),
+    };
+    await fetch(apiBaseURL + "/api/posts", options);
+    getAllPost();
+  } else {
+    alert("Please Post something");
+  }
+  document.getElementById("postInput").value = "";
+}
 
 async function setPostCount(count) {
   document.getElementById("postCount").innerHTML = count;
 }
-
-
-
 async function setPostCount(count) {
   document.getElementById("postCount").innerHTML = count;
 }
-
 async function getPostById(postId) {
   // GET /api/posts
   const options = {
@@ -116,16 +132,13 @@ async function getPostById(postId) {
       Authorization: "Bearer " + getLoginData().token,
     },
   };
-
   const response = await fetch(apiBaseURL + "/api/posts/" + postId, options);
   const postData = await response.json();
-
   return postData;
 }
 function likePost(_this) {
   alert("Like functionality not available");
 }
-
 //Method to parse JWT Token
 function parseJwt(token) {
   var base64Url = token.split(".")[1];
