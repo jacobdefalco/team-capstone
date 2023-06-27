@@ -117,12 +117,33 @@ async function addPost() {
   document.getElementById("postInput").value = "";
 }
 
+// async function setPostCount(count) {
+//   document.getElementById("postCount").innerHTML = count;
+// }
+
+async function deletePost(postId) {
+  let postdetails = await getPostById(postId.id);
+  //delete only id user trying to delete his own post
+  if (postdetails.username == getLoginData().username) {
+    // DELETE /api/posts
+    const options = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + getLoginData().token,
+      },
+    };
+    await fetch(apiBaseURL + "/api/posts/" + postId.id, options);
+    getAllPost();
+  } else {
+    alert("You are not allowed to delete others post");
+  }
+}
+
 async function setPostCount(count) {
   document.getElementById("postCount").innerHTML = count;
 }
-async function setPostCount(count) {
-  document.getElementById("postCount").innerHTML = count;
-}
+
 async function getPostById(postId) {
   // GET /api/posts
   const options = {
@@ -132,13 +153,16 @@ async function getPostById(postId) {
       Authorization: "Bearer " + getLoginData().token,
     },
   };
+
   const response = await fetch(apiBaseURL + "/api/posts/" + postId, options);
   const postData = await response.json();
+
   return postData;
 }
 function likePost(_this) {
   alert("Like functionality not available");
 }
+
 //Method to parse JWT Token
 function parseJwt(token) {
   var base64Url = token.split(".")[1];
