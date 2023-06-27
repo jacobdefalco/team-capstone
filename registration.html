@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="./css/style.css" rel="stylesheet" />
-    <title>Home</title>
+    <title>Registration</title>
     <script src="scripts/auth.js"></script>
   </head>
 
@@ -77,16 +77,13 @@
         </div>
       </div>
     </header>
-    
+
     <main>
       <div class="container">
         <h2>Registration</h2>
-        <form action="#" method="POST">
-          <label for="first-name">First Name:</label>
-          <input type="text" id="first-name" name="first-name" required />
-
-          <label for="last-name">Last Name:</label>
-          <input type="text" id="last-name" name="last-name" required />
+        <form id="register" method="POST">
+          <label for="full-name">First and Last Name:</label>
+          <input type="text" id="full-name" name="full-name" required />
 
           <label for="username">Username:</label>
           <input type="text" id="username" name="username" required />
@@ -124,12 +121,12 @@
           <input type="checkbox" id="newsletter" name="newsletter" />
           <label for="newsletter">Subscribe to the newsletter</label>
 
-          <input type="submit" value="Register" />
+          <button id="registerButton" type="submit">Register</button>
         </form>
       </div>
     </main>
     <footer></footer>
-    <script src="scripts/login.js"></script>
     <script src="scripts/index.js"></script>
+    <script src="scripts/register.js"></script>
   </body>
 </html>
