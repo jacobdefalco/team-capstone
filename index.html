@@ -78,6 +78,10 @@
                 <form class="d-flex text-white">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="d-flex nav-item">
+                      <div
+                        style="margin-top: 1em; margin-right: 1.5em"
+                        id="user-greeting-div"
+                      ></div>
                       <a class="nav-link active" href="" onclick="logout()">
                         <div>
                           <i class="fas fa-power-off fa-lg mb-1"></i>
@@ -94,47 +98,90 @@
         </div>
       </div>
     </header>
+
     <main>
-      <form id="login">
-        <div class="username-field">
-          <label for="username">Username</label>
-          <input type="text" id="username-input" required />
+      <form style="margin: 10em" id="login">
+        <!-- Username input -->
+        <div class="form-outline mb-4">
+          <input type="text" id="username-input" class="form-control" />
+          <label class="form-label" for="form2Example1">Username</label>
         </div>
 
-        <div class="password-field">
-          <label for="password">Password</label>
-          <input type="text" id="password-input" required />
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <input type="password" id="password-input" class="form-control" />
+          <label class="form-label" for="form2Example2">Password</label>
         </div>
 
-        <div class="remember-me-field">
-          <input type="checkbox" name="remember-me" id="remember-me-checkbox" />
-          <label for="remember-me-checkbox">Remember Me</label>
+        <!-- 2 column grid layout for inline styling -->
+        <div class="row mb-4">
+          <div class="col d-flex justify-content-center">
+            <!-- Checkbox -->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="form2Example31"
+                checked
+              />
+              <label class="form-check-label" for="form2Example31">
+                Remember me
+              </label>
+            </div>
+          </div>
+
+          <div class="col">
+            <!-- Simple link -->
+            <a href="#!">Forgot password?</a>
+          </div>
         </div>
 
-        <button type="submit" id="loginButton">Log In</button>
-        <hr />
-        <label for="register">Don't Have An Account?</label>
+        <!-- Submit button -->
+        <div class="text-center">
+          <button
+            type="submit"
+            id="loginButton"
+            class="btn btn-primary btn-block mb-4"
+          >
+            Log In
+          </button>
+
+          <!-- Register buttons -->
+          <p>Don't have an account?</p>
+
+          <button
+            onclick="window.location.href='registration.html';"
+            type="submit"
+            id="loginButton"
+            class="btn btn-primary btn-block mb-4"
+          >
+            Sign Up Here
+          </button>
+
+          <p>or sign up with:</p>
+
+          <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+
+          <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-google"></i>
+          </button>
+
+          <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-twitter"></i>
+          </button>
+
+          <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-github"></i>
+          </button>
+        </div>
       </form>
-
-      <a href="registration.html">
-        <input
-          type="submit"
-          value="Sign Up"
-          onclick="showRegisterForm()"
-          id="register-button"
-        />
-      </a>
-
-      <!-- <button
-          type="button"
-          id="register-button"
-          onclick="showRegisterForm()"
-        >
-          Sign Up
-        </button> -->
     </main>
     <footer></footer>
     <script src="scripts/login.js"></script>
     <script src="scripts/index.js"></script>
+    <script src="scripts/global.js"></script>
   </body>
 </html>
