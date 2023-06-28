@@ -8,7 +8,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="./css/style.css" rel="stylesheet" />
     <title>Registration</title>
+    
     <script src="scripts/auth.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="date"],
+      input[type="tel"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: none;
+        background-color: #f2f2f2;
+        border-radius: 3px;
+        color: #555;
+      }
+
+      select {
+        height: 35px;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4577b1;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #4577b1;
+      }
+    </style>
   </head>
 
   <body>
@@ -114,9 +181,10 @@
             <option>Personal</option>
             <option>Business</option>
           </select>
-
-          <input type="checkbox" id="terms" name="terms" required />
-          <label for="terms">I agree to the terms and conditions</label>
+          <div>
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms">I agree to the terms and conditions</label>
+          </div>
 
           <input type="checkbox" id="newsletter" name="newsletter" />
           <label for="newsletter">Subscribe to the newsletter</label>
