@@ -27,7 +27,10 @@ async function getAllPost() {
     },
   };
 
-  const response = await fetch(apiBaseURL + "/api/posts", options);
+  const response = await fetch(
+    apiBaseURL + "/api/posts?limit=1000&offset=0",
+    options
+  );
   const postData = await response.json();
 
   setPostCount(postData.length);
@@ -179,3 +182,4 @@ function parseJwt(token) {
 
   return JSON.parse(jsonPayload);
 }
+
