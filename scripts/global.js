@@ -1,7 +1,6 @@
 "use strict";
 
 const userGreeting = document.querySelector("#user-greeting-div");
-const logoutButton = document.querySelector("#logout-btn");
 
 const loginData = getLoginData();
 
