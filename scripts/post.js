@@ -96,12 +96,49 @@ function renderPost(postData) {
   });
 }
 
+async function addPost() {
+  // POST /api/posts
+  let post = document.getElementById("postInput").value;
 
-async function setPostCount(count) {
-  document.getElementById("postCount").innerHTML = count;
+  if (post && !(post.trim() == "")) {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + getLoginData().token,
+      },
+      body: JSON.stringify({ text: post }),
+    };
+    await fetch(apiBaseURL + "/api/posts", options);
+    getAllPost();
+  } else {
+    alert("Please Post something");
+  }
+  document.getElementById("postInput").value = "";
 }
 
+// async function setPostCount(count) {
+//   document.getElementById("postCount").innerHTML = count;
+// }
 
+async function deletePost(postId) {
+  let postdetails = await getPostById(postId.id);
+  //delete only id user trying to delete his own post
+  if (postdetails.username == getLoginData().username) {
+    // DELETE /api/posts
+    const options = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + getLoginData().token,
+      },
+    };
+    await fetch(apiBaseURL + "/api/posts/" + postId.id, options);
+    getAllPost();
+  } else {
+    alert("You are not allowed to delete others post");
+  }
+}
 
 async function setPostCount(count) {
   document.getElementById("postCount").innerHTML = count;
