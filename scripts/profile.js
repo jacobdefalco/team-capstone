@@ -1,5 +1,17 @@
 "use strict";
+const loginData = getLoginData();
 const postBtn = document.querySelector("#post-btn");
+window.onload = init;
+
+function init() {
+  postBtn.addEventListener("click", () => {
+    const postText = textContentElement.value;
+    const { username, password } = userData;
+    createPost(username, password, postText);
+  });
+
+  loadUser();
+}
 
 // Create functions to grab the current time
 const getCurrentDate = () => {
@@ -18,9 +30,7 @@ const getCurrentTime = () => {
   return `${hours}:${minutes}:${seconds}`;
 };
 
-if (isLoggedIn()) {
-  const loginData = getLoginData();
-
+function loadUser() {
   fetch(`${apiBaseURL}/api/users/${loginData.username}`, {
     headers: {
       Authorization: "Bearer " + loginData.token,
@@ -44,38 +54,31 @@ if (isLoggedIn()) {
 
         const dateElement = document.querySelector("#date");
         dateElement.innerHTML = `<p>${getCurrentDate()}</p>`;
-        
-
-        function createPost(username, password, postText) {
-          const postData = {
-            username: username,
-            password: password,
-            text: postText,
-          };
-
-          fetch(`${apiBaseURL}/api/users/`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: "Bearer " + loginData.token,
-            },
-            body: JSON.stringify(postData),
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              console.log("Post created:", data);
-            })
-            .catch((error) => {
-              console.error("Error:", error);
-            });
-        }
-
-        postBtn.addEventListener("click", () => {
-          const postText = textContentElement.value;
-          const { username, password } = userData;
-          createPost(username, password, postText);
-        });
       }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
+function createPost(username, password, postText) {
+  const postData = {
+    username: username,
+    password: password,
+    text: postText,
+  };
+
+  fetch(`${apiBaseURL}/api/users/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + loginData.token,
+    },
+    body: JSON.stringify(postData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Post created:", data);
     })
     .catch((error) => {
       console.error("Error:", error);
