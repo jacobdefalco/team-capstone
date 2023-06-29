@@ -52,10 +52,18 @@ function renderPost(postData) {
     div.className = "bg-post m-4 p-4";
 
     let likesElement;
-    if (element.likes.length) {
+    let likescount;
+    var newArray = element.likes.filter(function (element) {
+      return element.username == getLoginData().username;
+    });
+
+    if (newArray.length > 0) {
       likesElement = "text-danger";
     } else {
       likesElement = "text-secondary";
+    }
+    if (element.likes.length) {
+      likescount = "text-info";
     }
     var date = new Date(element.createdAt);
 
@@ -90,8 +98,16 @@ function renderPost(postData) {
       element.text +
       "</p>  </div> <hr > <div class='d-flex justify-content-end '> <i class='fa fa-heart  fa-xl " +
       likesElement +
-      "' onclick='likePost(this)'></i>" +
-      "<span class='d-flex flex-row muted-color'>" +
+      "' onclick='likePost(this)' name='likeElement_" +
+      element._id +
+      "' id='" +
+      element._id +
+      "' ></i>" +
+      "<span class='d-flex flex-row muted-color " +
+      likescount +
+      "' name='likeCountElement_" +
+      element._id +
+      "'>" +
       element.likes.length +
       "  Likes</span> </div>";
 
@@ -162,8 +178,73 @@ async function getPostById(postId) {
 
   return postData;
 }
-function likePost(_this) {
-  alert("Like functionality not available");
+async function likePost(_this) {
+  // alert(_this.id);
+
+  // 1) get existing likes
+  // 2) if loggedin user allreay have like then call delete like
+  // 3) if loggedin user not having likes then call add like
+
+  let postdetails = await getPostById(_this.id);
+  let likecounter = false;
+  console.log(postdetails);
+
+  var newArray = postdetails.likes.filter(function (element) {
+    return element.username == getLoginData().username;
+  });
+  if (newArray.length >= 1) {
+    document
+      .querySelector("[name='" + "likeElement_" + _this.id + "']")
+      .classList.remove("text-danger");
+    document
+      .querySelector("[name='" + "likeElement_" + _this.id + "']")
+      .classList.add("text-secondary");
+
+    document.querySelector(
+      "[name='" + "likeCountElement_" + _this.id + "']"
+    ).value = postdetails.likes.length - 1;
+
+    removelike(newArray[0]._id);
+  } else {
+    document
+      .querySelector("[name='" + "likeElement_" + _this.id + "']")
+      .classList.remove("text-secondary");
+    document
+      .querySelector("[name='" + "likeElement_" + _this.id + "']")
+      .classList.add("text-danger");
+    document.querySelector(
+      "[name='" + "likeCountElement_" + _this.id + "']"
+    ).value = postdetails.likes.length + 1;
+
+    addlike(_this.id);
+  }
+}
+
+async function removelike(postId) {
+  // DELETE /api/posts
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + getLoginData().token,
+    },
+  };
+  await fetch(apiBaseURL + "/api/likes/" + postId, options);
+  getAllPost();
+}
+
+async function addlike(postId) {
+  // DELETE /api/posts
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + getLoginData().token,
+    },
+    body: JSON.stringify({ postId: postId }),
+  };
+  await fetch(apiBaseURL + "/api/likes", options);
+  getAllPost();
 }
 
 //Method to parse JWT Token
@@ -182,4 +263,3 @@ function parseJwt(token) {
 
   return JSON.parse(jsonPayload);
 }
-

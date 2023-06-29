@@ -15,6 +15,14 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
 }
+.bg-image {
+  /* background: url(../images/postbg.jpg); */
+  background: url(../images/postbg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 hr {
   color: #a09c9c;
@@ -23,7 +31,7 @@ hr {
   width: 100%;
 }
 .bg-post {
-  background-color: rgb(244, 244, 251);
+  background-color: white;
 }
 
 /* ===================================== Basic CSS ==================================== */
