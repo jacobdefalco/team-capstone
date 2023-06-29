@@ -1,5 +1,4 @@
 "use strict";
-const loginData = getLoginData();
 const postBtn = document.querySelector("#post-btn");
 window.onload = init;
 
@@ -37,24 +36,26 @@ function loadUser() {
     },
   })
     .then((response) => response.json())
-    .then((data) => {
+    .then((userData) => {
       // Find the user data based on the username
-      const userData = data.find((users) => users.username === loginData.username);
 
       if (userData) {
         // Display elements
         const usernameElement = document.querySelector("#username");
         usernameElement.innerHTML = `<p>@${userData.username}</p>`;
 
-        const textContentElement = document.querySelector("#post-text");
-        textContentElement.innerText = "";
+        const fullNameElement = document.querySelector("#full-name");
+        fullNameElement.innerHTML = `<p>${userData.fullName}</p>`;
 
-        const timeElement = document.querySelector("#time");
-        timeElement.innerHTML = `<p>${getCurrentTime()}</p>`;
 
-        const dateElement = document.querySelector("#date");
-        dateElement.innerHTML = `<p>${getCurrentDate()}</p>`;
+        const bioElement = document.querySelector("#bio");
+        bioElement.innerHTML = `<p>${userData.bio}</p>`;
+        
+        const userSince = document.querySelector("#user-since");
+        userSince.innerHTML = `<p>${new Date(userPost.createdAt).toLocaleString()}<p>`;
       }
+
+     
     })
     .catch((error) => {
       console.error("Error:", error);
