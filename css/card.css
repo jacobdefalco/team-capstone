@@ -11,3 +11,12 @@
   border-radius: 6px;
   z-index: 9;
 }
+.transparant-card {
+  width: 40%;
+  display: block;
+  margin: 50px auto;
+  padding: 25px 50px 25px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  z-index: 9;
+}
