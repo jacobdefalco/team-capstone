@@ -4,5 +4,10 @@
     0 15px 15px rgba(0, 0, 0, 0.03), 0 30px 30px rgba(0, 0, 0, 0.04),
     0 70px 65px rgba(0, 0, 0, 0.05);
   /* border-radius: 6px; */
-  border: none;
+  display: block;
+  margin: 20px auto;
+  padding: 25px 50px 25px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  z-index: 9;
 }
