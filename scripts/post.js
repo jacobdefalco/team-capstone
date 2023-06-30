@@ -75,7 +75,7 @@ function renderPost(postData) {
       "<div class='dropdown' id='" +
       element._id +
       "'>" +
-      "<button class='btn btn-light' type='button' id='" +
+      "<button class='btn btn-dark' type='button' id='" +
       element._id +
       "' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>" +
       "  <i class='fa fa-ellipsis-h '></i>" +
@@ -90,7 +90,7 @@ function renderPost(postData) {
       "</div>";
 
     div.innerHTML +=
-      " <div class='d-flex justify-content-between p-3'> <span class='fw-bold text-info'> <i class='fas fa-user-circle fa-lg mb-1'></i> " +
+      " <div class='d-flex justify-content-between p-3'> <span class='fw-bold post-text' > <i class='fas fa-user-circle fa-lg mb-1 post-text'></i> " +
       element.username +
       " </span> " +
       actionElement +
