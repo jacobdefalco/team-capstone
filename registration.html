@@ -10,24 +10,29 @@
     <title>Registration</title>
     <script src="scripts/auth.js"></script>
     <style>
+      @import url(https://fonts.googleapis.com/css2?family=Nabla&family=Shanti&display=swap);
       body {
         font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
+        background-color: #282828;
       }
 
       .container {
         max-width: 800px;
+        height: 52em;
         margin: 0 auto;
         padding: 20px;
-        background-color: #fff;
-        border-radius: 5px;
+        background-color: #000000c5;
+        border-radius: 15px;
+        border-style: double;
+        border-color: rgba(141, 33, 241, 0.899);
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
 
-      h2 {
+      h3 {
         text-align: center;
         margin-bottom: 20px;
-        color: #333;
+        color: rgba(141, 33, 241, 0.899);
+        font-family: Shanti;
       }
 
       label {
@@ -43,13 +48,22 @@
       input[type="date"],
       input[type="tel"],
       select {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: none;
-        background-color: #f2f2f2;
-        border-radius: 3px;
-        color: #555;
+        width: 60%;
+        padding: 8px;
+        margin-bottom: 27px;
+        margin-left: 20%;
+        background-color: #000000;
+        border-style: solid;
+        border-color: rgba(141, 33, 241, 0.899);
+        border-radius: 6px;
+        color: #838383;
+      }
+
+      #nav-brand{
+       font-family: Permanent Marker;
+       color: #5a0080;
+       font-size: 150%;
+      
       }
 
       select {
@@ -58,21 +72,58 @@
 
       input[type="checkbox"] {
         margin-right: 10px;
+        margin-top: 0%;
+      }
+
+      #term-box {
+        margin-left: 20%;
+      }
+      #news-box {
+        margin-left: 20%;
+        margin-bottom: 3%;
       }
 
       button {
         display: block;
-        width: 100%;
+        width: 60%;
         padding: 10px;
-        background-color: #4577b1;
-        color: #fff;
+        background-color: rgba(141, 33, 241, 0.899);
+        margin-left: 20%;
+        color: #efefef;
         border: none;
         border-radius: 3px;
         cursor: pointer;
       }
 
       button:hover {
-        background-color: #4577b1;
+        background-color: #a550e2;
+      }
+      .sidenav {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background: transparent;
+        padding-top: 60px;
+        border-color: blueviolet;
+        border-width: 50emm;
+        padding-left: 29em;
+      }
+
+      .sidenav a {
+        padding: 22px 25px;
+        text-decoration: none;
+        font-size: 18px;
+        color: rgba(143, 31, 248, 0.899);
+        display: block;
+        padding-left: 190%;
+        margin-top: 4.1em;
+      }
+
+      .sidenav a:hover {
+        background-color: #5a0080;
       }
     </style>
   </head>
@@ -81,61 +132,37 @@
       <div class="row">
         <div class="col col-md-12">
           <!-- Navbar -->
-          <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Microbloglite</a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item text-center">
-                    <a class="nav-link active" aria-current="page" href="index.html">
-                      <div>
-                        <i class="fas fa-home fa-lg mb-1"></i>
-                      </div>
-                      Home
-                    </a>
-                  </li>
-                  <li class="nav-item text-center">
-                    <a class="nav-link active" aria-current="page" href="profile.html">
-                      <div>
-                        <i class="fas fa-user fa-lg mb-1"></i>
-                      </div>
-                      Profile
-                    </a>
-                  </li>
-                  <li class="nav-item text-center">
-                    <a class="nav-link active" href="posts.html">
-                      <div>
-                        <i class="fas fa-globe-americas fa-lg mb-1"></i>
-                        <span class="badge rounded-pill badge-notification bg-danger" id="postCount"></span>
-                      </div>
-                      Post
-                    </a>
-                  </li>
-                </ul>
-                <form class="d-flex text-white">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="d-flex nav-item">
-                      <a class="nav-link active" href="" onclick="logout()">
-                        <div>
-                          <i class="fas fa-power-off fa-lg mb-1"></i>
-                        </div>
-                        Logout
-                      </a>
-                    </li>
-                  </ul>
-                </form>
+          <div id="sidenav" class="sidenav">
+            <a href="index.html">
+              <div>
+                <i class="fas fa-home fa-lg mb-1"></i>
               </div>
+              Home
+            </a>
+            <a href="profile.html">
+              <div>
+                <i class="fas fa-user fa-lg mb-1"></i>
+              </div>
+              Profile
+            </a>
+            <a href="posts.html">
+              <div>
+                <i class="fas fa-globe-americas fa-lg mb-1"></i>
+                <span class="badge rounded-pill badge-notification bg-danger" id="postCount"></span>
+              </div>
+              Post
+            </a>
+            <a href="" onclick="logout()">
+              <div>
+                <i class="fas fa-power-off fa-lg mb-1"></i>
+              </div>
+              Logout
+            </a>
+          </div>
+
+          <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+              <a id="nav-brand"class="navbar-brand" href="#">Sync</a>
             </div>
           </nav>
           <!-- Navbar -->
@@ -145,47 +172,40 @@
 
     <main>
       <div class="container mt-5">
-        <h2>Registration</h2>
+        <h3>Registration</h3>
         <form id="register" method="POST">
-          <label for="full-name">First and Last Name:</label>
-          <input type="text" id="full-name" name="full-name" required />
+          <input type="text" id="full-name" name="full-name" placeholder="First and Last Name" />
 
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" required />
+          <input type="text" id="username" name="username" placeholder="Username" required />
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" placeholder="Email" />
 
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required />
+          <input type="password" id="password" name="password" placeholder="Password" required />
 
-          <label for="gender">Gender:</label>
           <select id="gender" name="gender" required>
-            <option value="">Select</option>
+            <option value="">Select Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">Other</option>
           </select>
 
-          <label for="dob">Date of Birth:</label>
-          <input type="date" id="dob" name="dob" required />
+          <input type="date" id="dob" name="dob" placeholder="Date of Birth" />
 
-          <label for="phone">Phone Number:</label>
-          <input type="tel" id="phone" name="phone" required />
+          <input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
 
-          <label for="accounttype">Account Type</label>
           <select>
             <option disabled selected>Account Type</option>
             <option>Personal</option>
             <option>Business</option>
           </select>
-
-          <input type="checkbox" id="terms" name="terms" required />
-          <label for="terms" class="noBlock">I agree to the terms and conditions</label>
-
-          <input type="checkbox" id="newsletter" name="newsletter" />
-          <label for="newsletter" class="noBlock">Subscribe to the newsletter</label>
-
+          <div id="term-box">
+            <label for="terms" class="noBlock">I agree to the terms and conditions</label>
+            <input type="checkbox" id="terms" name="terms" required />
+          </div>
+          <div id="news-box">
+            <label for="newsletter" class="noBlock">Subscribe to the newsletter</label>
+            <input type="checkbox" id="newsletter" name="newsletter" />
+          </div>
           <button id="registerButton" type="submit">Register</button>
         </form>
       </div>

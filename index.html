@@ -17,56 +17,40 @@
     <div class="row">
       <div class="col col-md-12">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <div id="sidenav" class="sidenav">
+          <a href="index.html">
+            <div>
+              <i class="fas fa-power-off fa-lg mb-1"></i>
+            </div>
+            Home
+          </a>
+          <a href="profile.html">
+            <div>
+              <i class="fas fa-user fa-lg mb-1"></i>
+            </div>
+            Profile
+          </a>
+          <a href="posts.html">
+            <div>
+              <i class="fas fa-globe-americas fa-lg mb-1"></i>
+              <span class="badge rounded-pill badge-notification bg-danger" id="postCount"></span>
+            </div>
+            Post
+          </a>
+          <a href="" onclick="logout()">
+            <div>
+              <i class="fas fa-power-off fa-lg mb-1"></i>
+            </div>
+            Logout
+          </a>
+        </div>
+        
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">Microbloglite</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
+            <a id="nav-brand"class="navbar-brand" href="#">Sync</a>
+            <button class="navbar-toggler" type="button" onclick="openNav()">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item text-center">
-                  <a class="nav-link active" aria-current="page" href="index.html">
-                    <div>
-                      <i class="fas fa-home fa-lg mb-1"></i>
-                    </div>
-                    Home
-                  </a>
-                </li>
-                <li class="nav-item text-center">
-                  <a class="nav-link active" aria-current="page" href="profile.html">
-                    <div>
-                      <i class="fas fa-user fa-lg mb-1"></i>
-                    </div>
-                    Profile
-                  </a>
-                </li>
-                <li class="nav-item text-center">
-                  <a class="nav-link active" href="posts.html">
-                    <div>
-                      <i class="fas fa-globe-americas fa-lg mb-1"></i>
-                      <span class="badge rounded-pill badge-notification bg-danger" id="postCount"></span>
-                    </div>
-                    Post
-                  </a>
-                </li>
-              </ul>
-              <form class="d-flex text-white">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="d-flex nav-item">
-                    <div style="margin-top: 1em; margin-right: 1.5em" id="user-greeting-div"></div>
-                    <a class="nav-link active" href="" onclick="logout()">
-                      <div>
-                        <i class="fas fa-power-off fa-lg mb-1"></i>
-                      </div>
-                      Logout
-                    </a>
-                  </li>
-                </ul>
-              </form>
-            </div>
           </div>
         </nav>
         <!-- Navbar -->
@@ -78,19 +62,19 @@
     <div class="transparant-card">
       <div class="logo">
         <img src="../images/user.png" />
-        <hr>
+        
       </div>
       <form id="login">
         <!-- Username input -->
         <div class="form-outline mb-4">
-          <input type="text" id="username-input" class="form-control" />
-          <label class="form-label" for="form2Example1">Username</label>
+          <input type="text" id="username-input" class="form-control" placeholder="username"/>
+        
         </div>
 
         <!-- Password input -->
         <div class="form-outline mb-4">
-          <input type="password" id="password-input" class="form-control" />
-          <label class="form-label" for="form2Example2">Password</label>
+          <input type="password" id="password-input" class="form-control" placeholder="password" />
+
         </div>
 
         <!-- 2 column grid layout for inline styling -->
@@ -107,7 +91,7 @@
 
           <div class="col">
             <!-- Simple link -->
-            <a href="#!">Forgot password?</a>
+            <a id="forgot-password" href="#!">Forgot password?</a>
           </div>
         </div>
 
@@ -122,7 +106,7 @@
 
           <button onclick="window.location.href='registration.html';" type="submit" id="loginButton"
             class="btn btn-primary btn-block mb-4">
-            Sign Up Here
+            Sign Up 
           </button>
 
           <p>or sign up with:</p>
@@ -144,6 +128,29 @@
           </button>
         </div>
       </form>
+    </div>
+    <div class="transparant-card text-center">
+      <p>
+        Introducing Sync, the revolutionary social media platform that
+        redefines the way we communicate and connect with people across the
+        globe. With its cutting-edge features and user-friendly interface,
+        Sync brings a whole new level of convenience and interaction to your
+        digital world. Seamlessly integrating various communication channels,
+        Sync allows users to effortlessly synchronize their messages in one
+        centralized hub. Whether you're catching up with friends,
+        collaborating with colleagues, or forging new connections, Sync
+        ensures that you stay connected in real-time, breaking down barriers
+        and fostering a truly global community.
+      </p>
+      <p>
+        Join the Sync community today and experience the power of global
+        connection. Step into a world where distance is no longer a hindrance
+        and cultures converge effortlessly. Connect with like-minded
+        individuals, engage in vibrant discussions, and explore the rich
+        tapestry of diverse perspectives. Welcome to Sync, where the world is
+        at your fingertips. Log in now and join the ever-expanding network of
+        global communicators who are shaping the future of connection.
+      </p>
     </div>
   </main>
   <footer></footer>
