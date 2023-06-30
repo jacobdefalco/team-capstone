@@ -1,12 +1,13 @@
 # Twitterfinger
 
-- Twitterfingers website design for visitors with the options to create a user account and new posts, and you can  "like" post of other users. If you want you can also delete your own Post. You can not delete other user's post.
+- Twitterfingers website design for visitors with the options to create a user account and new posts, and you can "like" post of other users. If you want you can also delete your own Post. You can not delete other user's post.
 
 Designed by: Jacob, Kanchan, Radhika, Demi.
 
 ---
 
 ## Technology
+
 HTML,
 CSS,
 JavaScript,
@@ -16,17 +17,17 @@ Bootstrap
 
 - Pull Code via Git and Open with Live Server
 
-
 git pull https://github.com/jacobdefalco/team-capstone
--Screenshots:
----
-  Login page:
 
-  ![image](https://github.com/jacobdefalco/team-capstone/assets/130574523/de1d1cd6-495a-40d0-865e-4fb435fedca3)
+## -Screenshots:
 
-   Registration Page:
+Login page:
 
-   ![image](https://github.com/jacobdefalco/team-capstone/assets/130574523/8e10f192-4554-4758-8c30-0545c51f2cef)
+![image](https://github.com/jacobdefalco/team-capstone/assets/130574523/de1d1cd6-495a-40d0-865e-4fb435fedca3)
+
+Registration Page:
+
+![image](https://github.com/jacobdefalco/team-capstone/assets/130574523/8e10f192-4554-4758-8c30-0545c51f2cef)
 
 Registring with new user:
 
@@ -36,20 +37,17 @@ Logging as a Registered user:
 
 ![image](https://github.com/jacobdefalco/team-capstone/assets/130574523/208d6e98-ce30-4aaa-87bd-6c863a0d035c)
 
-
 Post Page:
 
 ![image](https://github.com/jacobdefalco/team-capstone/assets/130574523/5acc7b09-c175-47d0-b472-04f1822884b1)
 
-Add Post: 
+Add Post:
 
 ![image](https://github.com/jacobdefalco/team-capstone/assets/130574523/ec4df4a0-1ab8-4eff-86b8-81e0f2f6e8a1)
-
 
 Page after adding comment:
 
 ![image](https://github.com/jacobdefalco/team-capstone/assets/130574523/451917f0-b5db-4686-8666-2db52976b68d)
-
 
 Heart Icon after liking post:
 
@@ -66,5 +64,3 @@ If you try to post empty space:
 Profile Page:
 
 ![image](https://github.com/kpate16/cakeshopee/assets/130574523/289b9806-d60a-4846-9cb9-594e82d39d7a)
-
-  
