@@ -136,12 +136,14 @@ async function addPost() {
   document.getElementById("postInput").value = "";
 }
 
-// async function setPostCount(count) {
-//   document.getElementById("postCount").innerHTML = count;
-// }
+async function setPostCount(count) {
+  document.getElementById("postCount").innerHTML = count;
+}
 
 async function deletePost(postId) {
+  //get post by Id
   let postdetails = await getPostById(postId.id);
+
   //delete only id user trying to delete his own post
   if (postdetails.username == getLoginData().username) {
     // DELETE /api/posts
@@ -157,10 +159,6 @@ async function deletePost(postId) {
   } else {
     alert("You are not allowed to delete others post");
   }
-}
-
-async function setPostCount(count) {
-  document.getElementById("postCount").innerHTML = count;
 }
 
 async function getPostById(postId) {
@@ -182,7 +180,7 @@ async function likePost(_this) {
   // alert(_this.id);
 
   // 1) get existing likes
-  // 2) if loggedin user allreay have like then call delete like
+  // 2) if loggedin user allready have like then call delete like
   // 3) if loggedin user not having likes then call add like
 
   let postdetails = await getPostById(_this.id);
@@ -200,10 +198,6 @@ async function likePost(_this) {
       .querySelector("[name='" + "likeElement_" + _this.id + "']")
       .classList.add("text-secondary");
 
-    document.querySelector(
-      "[name='" + "likeCountElement_" + _this.id + "']"
-    ).value = postdetails.likes.length - 1;
-
     removelike(newArray[0]._id);
   } else {
     document
@@ -212,15 +206,12 @@ async function likePost(_this) {
     document
       .querySelector("[name='" + "likeElement_" + _this.id + "']")
       .classList.add("text-danger");
-    document.querySelector(
-      "[name='" + "likeCountElement_" + _this.id + "']"
-    ).value = postdetails.likes.length + 1;
 
     addlike(_this.id);
   }
 }
 
-async function removelike(postId) {
+async function removelike(likeId) {
   // DELETE /api/posts
   const options = {
     method: "DELETE",
@@ -229,7 +220,7 @@ async function removelike(postId) {
       Authorization: "Bearer " + getLoginData().token,
     },
   };
-  await fetch(apiBaseURL + "/api/likes/" + postId, options);
+  await fetch(apiBaseURL + "/api/likes/" + likeId, options);
   getAllPost();
 }
 
