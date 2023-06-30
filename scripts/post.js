@@ -89,6 +89,7 @@ function renderPost(postData) {
       " </div>" +
       "</div>";
 
+      //to show post added all into innerhtml
     div.innerHTML +=
       " <div class='d-flex justify-content-between p-3'> <span class='fw-bold text-info'> <i class='fas fa-user-circle fa-lg mb-1'></i> " +
       element.username +
@@ -126,7 +127,7 @@ async function addPost() {
         "Content-Type": "application/json",
         Authorization: "Bearer " + getLoginData().token,
       },
-      body: JSON.stringify({ text: post }),
+      body: JSON.stringify({ text: post }),     
     };
     await fetch(apiBaseURL + "/api/posts", options);
     getAllPost();
