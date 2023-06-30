@@ -63,4 +63,8 @@ If you try to post empty space:
 
 ![image](https://github.com/jacobdefalco/team-capstone/assets/130574523/3af14ecb-f73e-4ae9-b872-5cf94f10bf08)
 
+Profile Page:
+
+![image](https://github.com/kpate16/cakeshopee/assets/130574523/289b9806-d60a-4846-9cb9-594e82d39d7a)
+
   
