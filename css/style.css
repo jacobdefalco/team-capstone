@@ -1,37 +1,107 @@
 /* ===================================== Import other CSS ================================== */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
 @import url(https://fonts.googleapis.com/css?family=Arimo:300,400,400italic,700,700italic);
-
+  @import url(https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Knewave&family=Lexend:wght@200;300;400;500&family=Permanent+Marker&family=Questrial&family=Secular+One&display=swap);
+  @import url(https://fonts.googleapis.com/css2?family=Nabla&family=Shanti&display=swap);
 @import url(form.css);
 @import url(button.css);
 @import url(logo.css);
 @import url(card.css);
 @import url(navbar.css);
-@import url(profile.css)
+/* @import url(profile.css) */
 /* @import url(bootstrap.min.css); */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 body {
-  background-color: #eee;
+  background-color: #000000;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
 }
 .bg-image {
   /* background: url(../images/postbg.jpg); */
-  background: url(../images/postbg.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: linear-gradient(#000000d2, #000000d0), url(/images/background-card.png); 
+  -webkit-background-size: repeat;
+  -moz-background-size: repeat;
+  -o-background-size: repeat;
+  background-size: repeat;
+}
+#card-body{
+  background-color: #000000;
+  border-style: solid;
+  border-color: rgba(167, 73, 255, 0.899);
+}
+#card-2{
+  background-color: #000000;
+  border-style: solid;
+  border-color: rgba(167, 73, 255, 0.899);
+}
+
+#addPost{
+  color:rgba(167, 73, 255, 0.899);
+  border-color: rgba(167, 73, 255, 0.899);
+}
+#postInput{
+  background: #000000;
+  color: wheat;
+  border-color:rgba(167, 73, 255, 0.899);
+}
+
+.post-text{
+  color:rgba(129, 13, 237, 0.899); 
 }
 
 hr {
-  color: #a09c9c;
+  color: #ffffff;
   margin-top: 4px;
   margin-bottom: 20px;
   width: 100%;
 }
 .bg-post {
-  background-color: white;
+  background-color: rgb(10, 10, 10);
+  border-radius: 10px;
+  color: #eee;
+  border-style: solid;
+  border-color: rgba(167, 73, 255, 0.899);;
+  
 }
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: transparent;
+  padding-top: 60px;
+  border-color: blueviolet;
+  border-width: 50emm;
+  padding-left: 6.5em;
+  
+}
+#nav-brand{
+  font-family: Permanent Marker;
+  color: #7307a2;
+  font-size: 150%;
+}
+
+.sidenav a {
+  padding: 30px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  color: rgba(141, 33, 241, 0.899);
+  display: block;
+  padding-left: 190%;
+  margin-top:4.0em;
+}
+
+.sidenav a:hover {
+  background-color: #5a0080;
+  width: 5%;
+}
+
+body {
+  background-color: rgb(9, 9, 9);
+}
+
 
 /* ===================================== Basic CSS ==================================== */

@@ -1,5 +1,5 @@
 .card {
-  box-shadow: 0 0 0 1px rgba(53, 72, 91, 0.07), 0 2px 2px rgba(0, 0, 0, 0.01),
+  box-shadow: 0 0 0 1px rgba(242, 242, 242, 0.07), 0 2px 2px rgba(0, 0, 0, 0.01),
     0 4px 4px rgba(0, 0, 0, 0.02), 0 10px 8px rgba(0, 0, 0, 0.03),
     0 15px 15px rgba(0, 0, 0, 0.03), 0 30px 30px rgba(0, 0, 0, 0.04),
     0 70px 65px rgba(0, 0, 0, 0.05);
@@ -12,11 +12,80 @@
   z-index: 9;
 }
 .transparant-card {
-  width: 40%;
+  width: 35%;
   display: block;
   margin: 50px auto;
   padding: 25px 50px 25px;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 6px;
+  background: rgba(5, 5, 5, 0.835);
+  margin-top: 5%;
+  border-radius: 20px;
   z-index: 9;
+  color: aliceblue;
+  border-style: double;
+  border-color: blueviolet;
+}
+
+#username-input{
+  width: 60%;
+  border-radius: 10px;
+  background-color: black;
+  border-color: blueviolet;
+  margin-left:19%;
+  color: white
+}
+#password-input{
+  width: 60%;
+  border-radius: 10px;
+  background-color: black;
+  border-color: blueviolet;
+  margin-left:19%;
+  color: white;
+}
+
+#forgot-password{
+  text-decoration: none;
+  font-style: Lexend ;
+  margin-left: 22%;
+  color: rgba(141, 41, 235, 0.899); 
+}
+
+#loginButton{
+ background-color: rgba(141, 33, 241, 0.899); 
+ border-style: none;
+ border-radius: 5px;
+}
+
+i{
+  color:rgba(141, 33, 241, 0.899);  ;
+}
+
+img{
+  border-style:solid;
+  border-color: blueviolet;
+  border-radius: 50%;
+}
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: transparent;
+  padding-top: 60px;
+  border-color: blueviolet;
+  border-width: 50emm;
+  padding-left: 29em;
+  
+}
+
+.sidenav a {
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: rgba(141, 33, 241, 0.899);
+  display: block;
+  padding-left: 160%;
+  margin-top:4.0em;
 }
