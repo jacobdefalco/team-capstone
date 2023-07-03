@@ -23,7 +23,7 @@ git pull https://github.com/jacobdefalco/team-capstone
 
 Login page:
 
-![image](https://github.com/jacobdefalco/team-capstone/assets/130574523/de1d1cd6-495a-40d0-865e-4fb435fedca3)
+![image](https://github.com/jacobdefalco/team-capstone/assets/130574523/8759c2a5-5856-441f-a3cd-0fdef87d2d30)
 
 Registration Page:
 
